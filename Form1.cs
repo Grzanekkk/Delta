@@ -4,6 +4,8 @@ using LiveCharts.Wpf;
 using System.Windows.Forms;
 using System.Windows.Media;
 using LinqToDB;
+using System.Windows.Shapes;
+using LiveCharts.Defaults;
 
 namespace Delta
 {
@@ -12,6 +14,7 @@ namespace Delta
         public Form1()
         {
             InitializeComponent();
+            WyświetlWykres();
         }
 
         double delta;
@@ -24,9 +27,16 @@ namespace Delta
         private void ObliczButton_Click(object sender, EventArgs e)
         {
             PrzypiszABC();
+
+            if (a == 0)
+            {
+                MessageBox.Show("To nie jest funkcja kwadratowa!");
+                return;
+            }
+
             ObliczWKolejnosci();
             WyświetlDane();
-            WyświetlWykres();
+
         }
 
         void WyświetlDane()
@@ -37,13 +47,23 @@ namespace Delta
             wierzcholekTxt.Text = wierzcholek;
             miejsceZeroweTxt.Text = miejscaZerowe;
             deltaTxt.Text = delta.ToString();
-
         }
 
         void WyświetlWykres()
         {
-
-
+            //wykresFunkcij.Series = new SeriesCollection
+            //{
+            //    new LineSeries
+            //    {
+            //        Values = new ChartValues<ObservablePoint>
+            //        {
+            //            new ObservablePoint(p,q),
+            //            new ObservablePoint(12,3),
+            //            new ObservablePoint(q,p)
+            //        },
+            //        PointGeometrySize = 15
+            //    }
+            //};
         }
 
         void ObliczWKolejnosci()
@@ -77,18 +97,18 @@ namespace Delta
 
         void ObliczWierzchołek()
         {
-            p = -b / 2 * a;
-            q = -delta / 4 * a;
+            p = Math.Round (- b / (2 * a), 2);
+            q = Math.Round (- delta / (4 * a), 2);
 
-            wierzcholek = $"({p}, {q})";
+            wierzcholek = $"({p}; {q})";
         }
 
         void ObliczMiejscaZerowe()
         {
             if(delta > 0)
             {
-                x1 = Math.Round((-b - Math.Sqrt(delta)) / 2 * a, 2);
-                x2 = Math.Round((-b + Math.Sqrt(delta)) / 2 * a, 2);
+                x1 = Math.Round((-b + Math.Sqrt(delta)) / (2 * a), 2);
+                x2 = Math.Round((-b - Math.Sqrt(delta)) / (2 * a), 2);
 
                 miejscaZerowe = $"x1 = {x1}, x2 = {x2}";
             }
