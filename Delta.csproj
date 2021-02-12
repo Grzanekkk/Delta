@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>delta %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="linq2db, Version=3.1.6.0, Culture=neutral, PublicKeyToken=e41013125f9e410a, processorArchitecture=MSIL">
       <HintPath>packages\linq2db.3.1.6\lib\net46\linq2db.dll</HintPath>
@@ -101,6 +104,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sporzadzanie_wykresu_funkcji_kwadratowej_47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="delta %281%29.ico" />
+    <Content Include="delta.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

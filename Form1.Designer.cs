@@ -29,6 +29,7 @@ namespace Delta
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.aInput = new System.Windows.Forms.TextBox();
             this.bInput = new System.Windows.Forms.TextBox();
@@ -260,6 +261,7 @@ namespace Delta
             this.Controls.Add(this.aInput);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Oblicznie Delty";
